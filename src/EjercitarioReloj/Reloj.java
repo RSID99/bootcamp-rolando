@@ -1,3 +1,5 @@
+package EjercitarioReloj;
+
 public class Reloj {
     private int horas;
     private int minutos;
