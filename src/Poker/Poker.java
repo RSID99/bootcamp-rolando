@@ -4,11 +4,11 @@ public class Poker {
     public static void main(String[] args) {
         Poker poker = new Poker();
         Carta[] mano = {
-                new Carta("2", "S"),
-                new Carta("2", "S"),
-                new Carta("2", "C"),
-                new Carta("3", "S"),
-                new Carta("3", "S")
+                new Carta("4", "S"),
+                new Carta("5", "S"),
+                new Carta("6", "S"),
+                new Carta("7", "S"),
+                new Carta("8", "S")
         };
         poker.identificarJugadas(mano);
     }
@@ -86,7 +86,7 @@ public class Poker {
         }
         return false;
     }
-
+    //contar la cantidad de veces que aparece el valor
     public int[] contarFrecuencias(Carta[] mano) {
         int[] valores = new int[15];
         for (Carta carta : mano) {
@@ -116,6 +116,4 @@ public class Poker {
             System.out.println("Carta Alta");
         }
     }
-
-
 }
