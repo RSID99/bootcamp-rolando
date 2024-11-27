@@ -6,7 +6,7 @@ public class Poker {
         Carta[] mano = {
                 new Carta("2", "S"),
                 new Carta("2", "S"),
-                new Carta("2", "C"),
+                new Carta("2", "S"),
                 new Carta("3", "S"),
                 new Carta("3", "S")
         };
