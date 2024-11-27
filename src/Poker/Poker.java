@@ -3,19 +3,19 @@ import java.util.Arrays;
 public class Poker {
     public static void main(String[] args) {
         Poker poker = new Poker();
-        carta[] mano = {
-                new carta("2", "S"),
-                new carta("2", "S"),
-                new carta("2", "C"),
-                new carta("3", "S"),
-                new carta("3", "S")
+        Carta[] mano = {
+                new Carta("2", "S"),
+                new Carta("2", "S"),
+                new Carta("2", "C"),
+                new Carta("3", "S"),
+                new Carta("3", "S")
         };
         poker.identificarJugadas(mano);
     }
 
-    public boolean color(carta[] mano) {
+    public boolean color(Carta[] mano) {
         String palo = mano[0].getPalo();
-        for (carta carta : mano) {
+        for (Carta carta : mano) {
             if (carta.getPalo() != palo) {
                 return false;
             }
@@ -23,7 +23,7 @@ public class Poker {
         return true;
     }
 
-    public boolean escalera(carta[] mano) {
+    public boolean escalera(Carta[] mano) {
         int[] valores = new int[mano.length];
         for (int i = 0; i < mano.length; i++) {
             valores[i] = mano[i].getValor();
@@ -39,7 +39,7 @@ public class Poker {
         return true;
     }
 
-    public boolean doblePar (carta[] mano) {
+    public boolean doblePar (Carta[] mano) {
         int pares = 0;
         int [] frecuencias = contarFrecuencias(mano);
         for (int frecuencia: frecuencias ){
@@ -50,7 +50,7 @@ public class Poker {
         return pares==2;
     }
 
-    public boolean par (carta[] mano) {
+    public boolean par (Carta[] mano) {
         int [] frecuencias = contarFrecuencias(mano);
         for (int frecuencia: frecuencias ){
             if (frecuencia == 2){
@@ -60,7 +60,7 @@ public class Poker {
         return false;
     }
 
-    public boolean trio (carta[] mano) {
+    public boolean trio (Carta[] mano) {
         int [] frecuencias = contarFrecuencias(mano);
         for (int frecuencia: frecuencias ){
             if (frecuencia == 3){
@@ -70,14 +70,14 @@ public class Poker {
         return false;
     }
 
-    public boolean full(carta[] mano){
+    public boolean full(Carta[] mano){
         if (trio(mano) && par(mano)){
             return true;
         }
         return false;
     }
 
-    public boolean poker(carta[] mano) {
+    public boolean poker(Carta[] mano) {
         int[] frecuencias = contarFrecuencias(mano);
         for (int frecuencia : frecuencias) {
             if (frecuencia == 4) {
@@ -87,15 +87,15 @@ public class Poker {
         return false;
     }
 
-    public int[] contarFrecuencias(carta[] mano) {
+    public int[] contarFrecuencias(Carta[] mano) {
         int[] valores = new int[15];
-        for (carta carta : mano) {
+        for (Carta carta : mano) {
             valores[carta.getValor()]++;
         }
         return valores;
     }
 
-    public void identificarJugadas(carta[] mano) {
+    public void identificarJugadas(Carta[] mano) {
         if (color(mano) && escalera(mano)) {
             System.out.println("Escalera Color");
         } else if (poker(mano)) {

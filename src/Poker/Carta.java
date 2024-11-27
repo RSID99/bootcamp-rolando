@@ -1,10 +1,10 @@
 package Poker;
 
-public class carta {
+public class Carta {
     private String valor;
     private String palo;
 
-    public carta (String valor, String palo){
+    public Carta(String valor, String palo){
         this.valor = valor;
         this.palo = palo;
     }
