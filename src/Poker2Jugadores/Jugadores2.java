@@ -30,22 +30,15 @@ public class Jugadores2 {
                     break;
             }
         }
-        Cartas [] mano1 ={
-                new Cartas(valores[0], palos[0]),
-                new Cartas(valores[1], palos[1]),
-                new Cartas(valores[2], palos[2]),
-                new Cartas(valores[3], palos[3]),
-                new Cartas(valores[4], palos[4]),
-        };
-        Cartas [] mano2={
-                new Cartas(valores[5], palos[5]),
-                new Cartas(valores[6], palos[6]),
-                new Cartas(valores[7], palos[7]),
-                new Cartas(valores[8], palos[8]),
-                new Cartas(valores[9], palos[9]),
-        };
-
-
+        Cartas [] mano1 = new Cartas[5];
+        Cartas [] mano2 = new Cartas[5];
+        for (int i = 0;i<10;i++){
+            if (i < 5 ){
+               mano1[i]= new Cartas(valores[i],palos[i] );
+            }  else {
+                mano2[i-5] = new Cartas(valores[i],palos[i] );
+            }
+        }
         /*//Probar de manera manual
         Cartas[] mano1 = {
                 new Cartas("2", "S"),
