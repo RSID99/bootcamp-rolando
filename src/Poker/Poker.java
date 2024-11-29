@@ -32,19 +32,19 @@ public class Poker {
         }
 
         Carta[] mano = {
-<<<<<<< HEAD
+//<<<<<<< HEAD
                 new Carta("2", "S"),
                 new Carta("2", "S"),
                 new Carta("2", "S"),
                 new Carta("3", "S"),
                 new Carta("3", "S")
-=======
+//=======
                 new Carta(valores[0], palos[0]),
                 new Carta(valores[1], palos[1]),
                 new Carta(valores[2], palos[2]),
                 new Carta(valores[3], palos[3]),
                 new Carta(valores[4], palos[4]),
->>>>>>> poker
+//>>>>>>> poker
         };
 
         /*//Probar de manera manual
