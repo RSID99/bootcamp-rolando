@@ -1,0 +1,55 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    margin: 0;
+    background-color: rgb(228, 247, 245);
+}
+.contenedor{
+    position:relative;
+    width: 650px;
+    height: 650px;
+    border-color: black;
+    border-style:groove;
+   
+}
+.imagen{
+    position: absolute; 
+    border-style: solid;
+    border-color: rgb(17, 19, 19); 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;  
+    background-color: rgb(237, 240, 243);
+}
+
+.imagen1{
+    top: 0;
+    left: 0;
+}
+.imagen2{
+    top: 100px;
+    left: 100px;
+}
+.imagen3{
+    top: 200px;
+    left: 200px;
+}
+.imagen4{
+    top: 300px;
+    left: 300px;
+}
+.imagen5{
+    top: 400px;
+    left: 400px;
+}
+
+.imagen:hover{
+    border-color:blue;
+}
+.imagen:hover ~ .imagen {
+    visibility: hidden;
+  
+}
