@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio4</title>
+</head>
+<body>
+    <div id="numero"></div>
+    <script>
+        function numeroAleatorio(id){
+            var numero = Math.floor(Math.random() * 100) + 1;
+            document.getElementById(id).innerHTML = numero;
+        }
+        numeroAleatorio("numero"); // Llama a la función para generar un número aleatorio y mostrarlo en el div con id "numero"
+    </script>
+</body>
+</html>
