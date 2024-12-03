@@ -22,9 +22,12 @@ h1{
     background-color: rgb(255, 255, 255);
 }
 
+
+
 table{
     width: 100%;
     height: 100%;
+    border-collapse: collapse;
 }
 .logo{
     width: 30px;
