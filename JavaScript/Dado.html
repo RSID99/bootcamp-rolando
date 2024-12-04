@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dado</title>
+</head>
+<body>
+    <h1>Generador de Dados</h1>
+    <div class="dado" id="dados1"></div>
+    <div class="dado" id="dados2"></div>
+    <div class="dado" id="dados3"></div>
+    <div class="dado" id="dados4"></div>
+    <div class="dado" id="dados5"></div>
+    <button onclick="generarDados()">Dados</button>
+
+<script>
+function generarAleatorios() {
+    let dados = [];
+    for (var i = 0; i <5;i++){
+        let numero = Math.floor(Math.random() * 6) + 1;
+        dados.push(numero);//añade elementos
+    }
+    return dados;
+}
+
+
+function crearpuntos(numero) {
+    if (numero===1){
+       return ".";     
+    } else if (numero===2){
+        return ". .";
+    } else if (numero===3){
+        return ". . .";
+    } else if (numero===4){
+        return ". . . .";
+    } else if (numero===5){
+        return ". . . . .";
+    } else if (numero===6){
+        return ". . . . . .";
+    }
+
+}
+
+
+
+
+
+function generarDados(){
+    let auxDados = generarAleatorios();
+    
+    document.getElementById("dados1").innerHTML = crearpuntos(auxDados[0]);
+    document.getElementById("dados2").innerHTML = crearpuntos(auxDados[1]);
+    document.getElementById("dados3").innerHTML = crearpuntos(auxDados[2]);
+    document.getElementById("dados4").innerHTML = crearpuntos(auxDados[3]);
+    document.getElementById("dados5").innerHTML = crearpuntos(auxDados[4]);
+}
+</script>
+</body>
+</html>
