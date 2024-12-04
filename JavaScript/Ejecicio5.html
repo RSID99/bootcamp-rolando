@@ -3,29 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculadora</title>
     <link rel="stylesheet" href="Ejercicio5.css">
 </head>
 <body>
-    <div class = "contenedor">
+    <div class = "calculadora">
+        <input type="text" id="resultado" disabled>
         <table>
             <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
+                <td><button onclick="agregar('*')">*</button></td>
+                <td><button onclick="agregar('/')">/</button></td>
+                <td><button onclick="agregar('+')">+</button></td>
+                <td><button onclick="agregar('-')">-</button></td>
             </tr>
             <tr>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
+                <td><button onclick="agregar('7')">7</button></td>
+                <td><button onclick="agregar('8')">8</button></td>
+                <td><button onclick="agregar('9')">9</button></td>
+                <td><button onclick="limpiar()">←</button></td>
+                
             </tr>
             <tr>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
+                <td><button onclick="agregar('4')">4</button></td>
+                <td><button onclick="agregar('5')">5</button></td>
+                <td><button onclick="agregar('6')">6</button></td>
+                
             </tr>
-            
+            <tr>
+                <td><button onclick="agregar('1')">1</button></td>
+                <td><button onclick="agregar('2')">2</button></td>
+                <td><button onclick="agregar('3')">3</button></td>
+                
+            </tr>
+            <tr>
+                <td><button onclick="agregar('.')">.</button></td>
+                <td><button onclick="agregar('0')">0</button></td>
+                <td><button onclick="calcular()">=</button></td>
+            </tr>
         </table>
     </div>
+    <script >
+        let resultado = document.getElementById("resultado");
+        function agregar(value) { 
+            resultado.value += value;
+        }
+        
+        function calcular() {
+            let expresion = resultado.value;
+            resultado.value = eval(expresion);
+
+        }
+
+        function limpiar() {
+            resultado.value = "";
+        }
+    </script>
 </body>
 </html>
