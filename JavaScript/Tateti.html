@@ -6,29 +6,128 @@
     <title>Tateti</title>
     <link rel="stylesheet" href="tateti.css">
 </head>
-<body>  
-    <div class="tateti">
+<body> 
+     
+    <div id="inicio">
+        <input type="text" id="jug1" placeholder="Jugador 1 " required>
+        <input type="text" id="jug2" placeholder="Jugador 2 " required> 
+        <h2>Jugador1 elija X o O</h2>
+        <div>
+            <input type="radio" id="x" name="symbol" value="X" onclick="simbolo('X')">
+            <label for="x">X</label>
+            <input type="radio" id="o" name="symbol" value="O" onclick="simbolo('O')">
+            <label for="o">O</label>
+        </div>
+        <button onclick="iniciarJuego()">Iniciar</button>
+    </div>
+    <div id="tablero" style="display: none;">
         <table>
             <tr>
-                <td><button onclick="seleccion(1)"></button></td>
-                <td><button onclick="seleccion(2)"></button></td>
-                <td><button onclick="seleccion(3)"></button></td>
+                <td><button></button></td>
+                <td><button></button></td>
+                <td><button></button></td>
             </tr>
             <tr>
-                <td><button onclick="seleccion(4)"></button></td>
-                <td><button onclick="seleccion(5)"></button></td>
-                <td><button onclick="seleccion(6)"></button></td>
+                <td><button></button></td>
+                <td><button></button></td>
+                <td><button ></button></td>
             </tr>
             <tr>
-                <td><button onclick="seleccion(7)"></button></td>
-                <td><button onclick="seleccion(8)"></button></td>
-                <td><button onclick="seleccion(9)"></button></td>
+                <td><button></button></td>
+                <td><button></button></td>
+                <td><button></button></td>
             </tr>
         </table>
+    </div>
         <script>
-            function seleccion(numero){
-    
+            let jugador1 = '';
+            let jugador2 = '';
+            let turno = '';
+            let tablero = ['', '', '', '', '', '', '', '', '']; 
+            let juegoActivo = false;
+            let turnoJug1 = '';
+            let turnoJug2 = '';
+            
+            function simbolo(simboloSeleccionado) {
+                turno = simboloSeleccionado;
             }
+            
+            function iniciarJuego() {
+                jugador1 = document.getElementById('jug1').value;
+                jugador2 = document.getElementById('jug2').value;
+            
+                if (jugador1==="" || jugador2==="" || turno==="") {
+                    alert('Ingrese los nombres de ambos jugadores y seleccione un símbolo');
+                    return;
+                }
+            
+                if (turno === 'X') {
+                    turnoJug1 = 'X';
+                    turnoJug2 = 'O';
+                } else {
+                    turnoJug1 = 'O';
+                    turnoJug2 = 'X';
+                }
+            
+                juegoActivo = true;
+                tablero = ['', '', '', '', '', '', '', '', ''];
+            
+                document.querySelectorAll('td button').forEach((button, index) => {
+                    button.textContent = '';
+                    button.style.pointerEvents = 'auto';
+                    button.onclick = () => marcar(index);
+                });
+            
+                document.getElementById('inicio').style.display = 'none';
+                document.getElementById('tablero').style.display = 'block';
+            }
+            
+            function marcar(index) {
+                if (!juegoActivo || tablero[index] !== '') return;
+            
+                tablero[index] = turno;
+                document.querySelectorAll('td button')[index].textContent = turno;
+            
+                if (Ganador()) {
+                        alert(turno === turnoJug1 ? `${jugador1} gana!` : `${jugador2} gana!`);
+                        reiniciarJuego();
+                    return;
+                }
+            
+                if (!tablero.includes('')) {
+                        alert('¡Empate!');
+                        reiniciarJuego();
+                    return;
+                }
+            
+                turno = turno === 'X' ? 'O' : 'X';
+            }
+            
+            function Ganador() {
+                const combinacionesGanadoras = [
+                    [0, 1, 2],
+                    [3, 4, 5],
+                    [6, 7, 8],
+                    [0, 3, 6],
+                    [1, 4, 7],
+                    [2, 5, 8],
+                    [0, 4, 8],
+                    [2, 4, 6]
+                ];
+            
+                return combinacionesGanadoras.some(combinacion => {
+                    const [a, b, c] = combinacion;
+                    return tablero[a] && tablero[a] === tablero[b] && tablero[a] === tablero[c];
+                });
+            }
+
+            function reiniciarJuego() {
+                juegoActivo = false;
+                document.getElementById('tablero').style.display = 'none';
+                document.getElementById('inicio').style.display = 'block';
+            }
+
+
         </script>
     </div>
 
