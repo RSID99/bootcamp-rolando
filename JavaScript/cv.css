@@ -1,0 +1,74 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor Principal */
+.contenedor {
+    display: grid;
+    grid-template-rows: 80% 20%; /* 80% para currículum, 20% para botones */
+    height: 100vh; /* Toda la altura de la pantalla */
+    gap: 40px;
+    width: 100%; /* Asegura que el contenedor use toda la anchura */
+}
+
+/* Estilos del Currículum */
+.curriculum {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    overflow: auto; /* Permite el desplazamiento si el contenido es mayor */
+}
+
+.curriculum div {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.curriculum div:nth-child(odd) {
+    background-color: #f9f9f9; /* Fondo claro para columnas impares */
+}
+
+.curriculum div:nth-child(even) {
+    background-color: #e6e6e6; /* Fondo más oscuro para columnas pares */
+}
+
+/* Estilos de la Sección de Botones */
+.botones {
+    background-color: #b7d6f4; /* Fondo diferente */
+    padding: 20px;
+    text-align: center; /* Centra contenido */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espaciado entre elementos */
+}
+
+/* Estilo para los elementos de los botones */
+.botones textarea, .botones button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc; /* Bordes */
+    border-radius: 5px;
+}
+
+.botones button {
+    background-color: #007BFF; /* Azul para los botones */
+    color: white;
+    cursor: pointer;
+}
+
+.botones button:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+}
+
+/* Box sizing */
+* {
+    box-sizing: border-box; /* Asegura que el padding y border se incluyan en el total */
+}
