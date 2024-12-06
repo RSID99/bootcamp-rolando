@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum</title>
+    <link rel="stylesheet" href="cv.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+    <div id="curr">
+        <section>
+            <h2>Datos Personales</h2>
+            <p>Nombre: Rolando Insfran</p>
+            <p>Email: rolodelvalle11@gmail.com</p>
+            <p>Celular: +595 985845684</p>
+        </section>
+
+        <section>
+            <h2>Habilidades</h2>
+            <ul>
+                <li>Trabajo en equipo</li>
+                <li>Conocimiento de lenguajes de programación</li>
+                <li>Manejo de bases de datos</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Educación</h2>
+            <p>Centro Regional de Educación Saturio Rios</p>
+            <p>Universidad Nacional de Asunción<br>Carrera: Licenciado en Informática (cursando el 6to semestre)</p>
+        </section>
+
+        <section>
+            <h2>Experiencia Laboral</h2>
+            <p>Empresa: Copaco SA<br>Puesto: Agente de Call Center (2022-Actualmente)</p>
+        </section>
+
+        <div class="botones">
+            <form id="contactoForm">
+                <label for="comentarios">Contacto:</label><br>
+                <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea><br>
+                <button type="button" id="Enviar" onclick="enviar()">Enviar</button>
+            </form>
+            <button id="Descargar" onclick="descargarPDF()">Descargar</button>
+        </div>
+    </div>
+
+    <script>
+        function descargarPDF() {
+            const element = document.getElementById("curr");
+            const opt = {
+                margin: 1,
+                filename: 'CV_Rolando_Insfran.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+        
+            html2pdf().set(opt).from(element).save().then(() => {
+                console.log("PDF generado con éxito.");
+            }).catch(err => {
+                console.error("Error al generar el PDF:", err);
+            });
+        }
+        
+
+        function enviar() {
+            const comentarios = document.getElementById("comentarios").value;
+            alert("Comentarios enviados: " + comentarios);
+            console.log("Mensaje de Contacto: ", comentarios);
+            document.getElementById("comentarios").value = "";
+        }
+    </script>
+</body>
+</html>
