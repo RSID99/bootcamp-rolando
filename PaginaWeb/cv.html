@@ -10,11 +10,12 @@
 <body>
 
     <section id="curr">
-        
+        <section class=" ima">
+            <img src="descarga.jpg" alt="Foto de Rolando Insfran">
+            <h1>Rolando Sebastian Insfran Delvalle</h1>
+        </section>
         <section>
-
             <h2>Datos Personales</h2>
-            <p>Nombre: Rolando Insfran</p>
             <p>Email: rolodelvalle11@gmail.com</p>
             <p>Celular: +595 985845684</p>
         </section>
@@ -46,6 +47,7 @@
             <button type="button" id="Enviar" onclick="enviar()">Enviar</button>
         </form>
         <button id="Descargar" onclick="descargarPDF()">Descargar</button>
+        <button id="atras" onclick="atras()">Atras</button>
     </div>
     <script>
         function descargarPDF() {
@@ -64,7 +66,9 @@
                 console.error("Error al generar el PDF:", err);
             });
         }
-        
+        function atras(){
+                window.location.href = "inicio.html";
+        }
 
         function enviar() {
             const comentarios = document.getElementById("comentarios").value;
