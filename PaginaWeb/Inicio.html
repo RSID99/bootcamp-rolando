@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>PaginaWeb</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="paginaweb.css">
@@ -20,6 +20,9 @@
                             <li><a href="#contacto">Contact</a></li>
                         </ul>
                     </nav>
+                    <div id="icono-nav" onclick="responsiveMenu()">
+                        <i class ="fa-solid fa-bars"></i>
+                    </div>
 
                     <div class="redes">
                         <a href="https://www.linkedin.com/in/rolando-sebastian-insfran-delvalle-0b036831b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
@@ -36,8 +39,8 @@
                 </div>
             </header>
             <div class = "presentacion">
-                <h2>Bienvenido a Blog Personal</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non tellus id est semper viverra. Aliquam erat volutpat. Nulla facilisi. Duis euismod enim id est finibus, et elementum velit consectetur. In consectetur, mi id pulvinar fermentum, urna purus commodo arcu, in pellentesque justo neque id nunc. Sed in nisi vel dui viverra tincidunt.</p>
+                <h2>¡Bienvenido!</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates deleniti dolorem nemo assumenda libero ea. Optio quasi, perferendis porro eos unde molestias assumenda explicabo pariatur corrupti, inventore fuga commodi in!</p>
             </div>
         </div>
     </section>
@@ -59,7 +62,9 @@
     <section id="contacto">
         <h3 class="titulo-seccion">Contacta ahora</h3>
         <div class="contenedor-form">
-            <form action="https://formsubmit.co/rolodelvalle11@email.com" method="POST">
+            <form id="form" action="https://formsubmit.co/rolodelvalle11@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="http://localhost:5501/inicio.html">
                 <div class="fila mitad">
                     <input type="text" name="name" placeholder="Nombre Completo" class="input-mitad" required>
                     <input type="email" name="email" placeholder="Email" class="input-mitad" required>
@@ -71,7 +76,7 @@
                     <textarea name="message" cols="30" rows="10" placeholder="Escribe tu mensaje" class="input-full" required></textarea>
                 </div>
                 <input type="submit" value="Enviar Mensaje" class="btn-enviar">
-            </form>
+            </form>            
         </div>
     </section>
     <footer>
@@ -90,6 +95,25 @@
             </div>
         </div>
     </footer>
-    
+    <script>
+        ((d)=>{
+            
+            const $form = d.getElementById("form");
+            $form.addEventListener("submit", (e) => {
+                e.preventDefault()});
+            
+            form.reset();
+
+        })(document);
+
+        function responsiveMenu(){
+            var x = document.getElementById("nav");
+            if (x.className===""){
+                x.className = "responsive";
+            } else{
+                x.className = "";
+            }
+        }
+    </script>
 </body>
 </html>

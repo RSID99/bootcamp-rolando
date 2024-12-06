@@ -94,35 +94,37 @@ html {
 
 }
 /*seccion about*/
-#about{
-    max-width: 1100px;
-    margin:auto;
-    padding: 100px 15px;
-    color:#111135;
+#about {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("fondo.jpg"); 
+    background-size: cover;
+    background-position: center center;
+    color: #111135;
     display: flex;
-    height: 100vh;
+    flex-direction: column; /* Cambiado a columna para una mejor disposición en pantallas pequeñas */
+    align-items: center;
+    padding: 50px 20px; /* Reduce el padding para pantallas pequeñas */
 }
 
-#about .contenedor-foto{
+#about .contenedor-foto {
     max-width: 400px;
-    margin-right:80px;
+    width: 100%; /* Asegúrate de que sea responsive */
+    margin: 20px; /* Añade margen para separar elementos */
 }
 
-#about .contenedor-foto img{
-    padding: 20px;
-    width: 100%;
+#about .contenedor-foto img {
+    width: 100%; /* Mantiene la imagen dentro de su contenedor */
     border-radius: 20px;
-    background-color: #f3f3f3;
 }
 
-#about .about{
-    margin:0 40px;
+#about .about {
+    margin: 20px; /* Asegúrate de que haya margen en pantallas pequeñas */
+    text-align: center; /* Centra el texto */
 }
 
 #about .about .titulo-seccion{
     font-size: 22px;
     text-transform: uppercase;
-    color:#111135;
+    color:#ffffff;
     text-decoration: underline;
     text-decoration-color: #d3d3d3;
     text-decoration-thickness: 5px;
@@ -133,6 +135,7 @@ html {
     font-weight: bold;
     margin: 20px 0;
     letter-spacing: 2px;
+    color: #fff;
 }
 
 #about .about h2 span{
@@ -150,7 +153,7 @@ html {
 #about .about p{
     font-size: 14px;
     line-height: 25px;
-    color: #565656;
+    color: #ffffff;
     margin-bottom: 12px;
 }
 
@@ -158,25 +161,29 @@ html {
 #about .about a{
 display:inline-block;
 text-decoration: none;
-color:#000;
+color:#171616;
 border-radius: 30px;
 padding: 10px 20px;
 border: 1px solid #000;
 margin-top: 30px;
 transition: .5s;
 cursor: pointer;
+background-color: #fff;
 }
 
 #about .about a:hover{
-    background-color: #000;
-    color: #fff;
+    background-color: rgb(11, 18, 6);
+    color: #ffffff;
 }
 
 /*Seccion Contacto*/
 
 #contacto {
-    padding: 100px 15px;
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("fondo.jpg"); 
+    background-size: cover;
+    background-position: center center;
     height: 100vh;
+    padding: 100px 20px;
     
 }
 #contacto  .titulo-seccion{
@@ -184,7 +191,7 @@ cursor: pointer;
     text-align: center;
     font-size: 22px;
     text-transform: uppercase;
-    color:#111135;
+    color:#fcfcfc;
     text-decoration: underline;
     text-decoration-color:#d3d3d3;
     text-decoration-thickness: 5px;
@@ -208,7 +215,6 @@ justify-content: space-between;
     padding: 20px;
     border-radius:20px;
     border: none;
-    border: 1px solid #919191;
 }
 
 #contacto .contenedor-form .mitad input{
@@ -248,4 +254,79 @@ footer a{
     display: inline-block;
     margin:5px;
     font-size: 26px;
+}
+
+/*Responsive*/
+@media screen and (max-width: 767px) {
+    .redes{
+        display: none;
+    }
+    nav{
+        display: none;
+    }
+    nav.responsive{
+        display: block;
+        background-color: #000;
+        width: 100%;
+        position: absolute;
+        top:48px;
+        left: 0;
+        padding: 10px 0;
+    }
+    nav.responsive ul {
+        display: block !important;
+        text-align: center;
+    }
+    nav.responsive ul li{
+        margin: 5px 0;
+    }
+    #icono-nav {
+        color: #fff;
+        display: block;
+    }
+
+    #about {
+        padding: 20px; /* Reduce el padding */
+        flex-direction: column; /* Coloca elementos en columna */
+        align-items: center; /* Centra los elementos */
+    }
+
+    #about .contenedor-foto {
+        max-width: 100%; /* Hace que la imagen use todo el ancho disponible */
+        margin: 0 auto; /* Centra la imagen */
+    }
+
+    #about .about {
+        margin: 0; /* Elimina márgenes innecesarios */
+    }
+
+    #about .about p {
+        font-size: 14px; /* Ajusta el tamaño de la fuente del párrafo */
+    }
+
+    #about .contenedor-foto img{
+        padding: 8px;
+    }
+    #about .about .titulo-seccion{
+        text-align: center;
+    }
+    #about .about h2 {
+        font-size: 24px; /* Ajusta el tamaño de la fuente */
+    }
+
+    #about .about a{
+        text-align: center;
+    }
+    #contacto {
+        padding: 50px 15px;
+    }   
+    #contacto .contenedor-form .mitad{
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    #contacto .contenedor-form .mitad input{
+        width: 100%;
+        margin-bottom: 15px;
+    }
 }

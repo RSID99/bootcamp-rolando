@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "../HTML Y CSS"
+		},
+		{
+			"path": "../JavaScript"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "C:/Users/rolod/Desktop/PaginaWeb"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "PaginaWeb"
+	}
+}
