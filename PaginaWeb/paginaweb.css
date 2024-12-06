@@ -100,25 +100,25 @@ html {
     background-position: center center;
     color: #111135;
     display: flex;
-    flex-direction: column; /* Cambiado a columna para una mejor disposición en pantallas pequeñas */
+    flex-direction: column; 
     align-items: center;
-    padding: 50px 20px; /* Reduce el padding para pantallas pequeñas */
+    padding: 50px 20px; 
 }
 
 #about .contenedor-foto {
     max-width: 400px;
-    width: 100%; /* Asegúrate de que sea responsive */
-    margin: 20px; /* Añade margen para separar elementos */
+    width: 100%; 
+    margin: 20px; 
 }
 
 #about .contenedor-foto img {
-    width: 100%; /* Mantiene la imagen dentro de su contenedor */
+    width: 100%; 
     border-radius: 20px;
 }
 
 #about .about {
-    margin: 20px; /* Asegúrate de que haya margen en pantallas pequeñas */
-    text-align: center; /* Centra el texto */
+    margin: 20px; 
+    text-align: center; 
 }
 
 #about .about .titulo-seccion{
@@ -148,6 +148,7 @@ html {
     text-transform: uppercase;
     margin-bottom: 20px;
     letter-spacing: 1px;
+    color:aqua
 }
 
 #about .about p{
@@ -155,8 +156,8 @@ html {
     line-height: 25px;
     color: #ffffff;
     margin-bottom: 12px;
+    text-align: left;
 }
-
 
 #about .about a{
 display:inline-block;
@@ -286,22 +287,22 @@ footer a{
     }
 
     #about {
-        padding: 20px; /* Reduce el padding */
-        flex-direction: column; /* Coloca elementos en columna */
-        align-items: center; /* Centra los elementos */
+        padding: 20px; 
+        flex-direction: column; 
+        align-items: center; 
     }
 
     #about .contenedor-foto {
-        max-width: 100%; /* Hace que la imagen use todo el ancho disponible */
-        margin: 0 auto; /* Centra la imagen */
+        max-width: 100%; 
+        margin: 0 auto; 
     }
 
     #about .about {
-        margin: 0; /* Elimina márgenes innecesarios */
+        margin: 0; 
     }
 
     #about .about p {
-        font-size: 14px; /* Ajusta el tamaño de la fuente del párrafo */
+        font-size: 14px; 
     }
 
     #about .contenedor-foto img{
@@ -311,7 +312,7 @@ footer a{
         text-align: center;
     }
     #about .about h2 {
-        font-size: 24px; /* Ajusta el tamaño de la fuente */
+        font-size: 24px; 
     }
 
     #about .about a{

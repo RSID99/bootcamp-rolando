@@ -16,6 +16,7 @@
                     <nav id="nav" class="">
                         <ul>
                             <li><a href="#inicio">Home</a></li>
+                            <li><a href="#">Mi trabajo</a></li>
                             <li><a href="#about">About</a></li>
                             <li><a href="#contacto">Contact</a></li>
                         </ul>
@@ -39,10 +40,12 @@
                 </div>
             </header>
             <div class = "presentacion">
-                <h2>¡Bienvenido!</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates deleniti dolorem nemo assumenda libero ea. Optio quasi, perferendis porro eos unde molestias assumenda explicabo pariatur corrupti, inventore fuga commodi in!</p>
+                <h2>¡Bienvenido a mi portafolio!</h2>
             </div>
         </div>
+    </section>
+    <section id="mitrabajo">
+
     </section>
 
     <section id="about">
@@ -50,19 +53,19 @@
             <img src="about.jpg" alt="foto">
         </div>
         <div class="about">
-            <p class="titulo-seccion">Sobre Mi</p>
+            <h1 class="titulo-seccion">Sobre Mi</h1>
             <h2> Hola, soy <span>Rolando Insfran</span></h2>
-            <h3>Desarrollador Web</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at dolor vel ipsum pretium dapibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Donec non convallis nunc, vel bibendum erat. Sed vel libero at ipsum interdum euismod.</p>
+            <h3>Bootcamper Java</h3>
+            <p>Actualmente estoy estudiando la carrera de Lic en Informática</p>
             <a href="cv.html">Ver CV</a>
         </div>
     </section>
     
 
     <section id="contacto">
-        <h3 class="titulo-seccion">Contacta ahora</h3>
+        <h3 class="titulo-seccion">Contacta  ahora</h3>
         <div class="contenedor-form">
-            <form id="form" action="https://formsubmit.co/rolodelvalle11@gmail.com" method="POST">
+            <form id="form" action="https://formsubmit.co/ajax/rolodelvalle15@gmail.com" method="POST">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="http://localhost:5501/inicio.html">
                 <div class="fila mitad">
@@ -96,15 +99,33 @@
         </div>
     </footer>
     <script>
-        ((d)=>{
-            
+        ((d) => {
             const $form = d.getElementById("form");
             $form.addEventListener("submit", (e) => {
-                e.preventDefault()});
-            
-            form.reset();
-
+                e.preventDefault();
+                const formData = new FormData($form); 
+                fetch($form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Mensaje enviado con éxito!');
+                        $form.reset(); 
+                    } else {
+                        alert('Error al enviar el mensaje.');
+                    }
+                })
+                .catch(error => {
+                    alert('Error al enviar el mensaje: ' + error);
+                });
+            });
         })(document);
+    
 
         function responsiveMenu(){
             var x = document.getElementById("nav");
