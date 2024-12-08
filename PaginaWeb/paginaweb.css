@@ -91,7 +91,23 @@ html {
     margin: 25px auto;
     font-size: 18px;
     color: aliceblue;
+}
 
+
+#inicio .contenido .carousel {
+    max-width: 300px; 
+    margin: 20px auto;
+}
+
+
+#inicio .contenido .carousel .carousel-inner img {
+    width: 100%; 
+    height: auto; 
+    object-fit: cover; 
+}
+
+#icono-nav{
+    display: none;
 }
 /*seccion about*/
 #about {
@@ -102,11 +118,11 @@ html {
     display: flex;
     flex-direction: column; 
     align-items: center;
-    padding: 50px 20px; 
+    padding: 75px 20px; 
 }
 
 #about .contenedor-foto {
-    max-width: 400px;
+    max-width: 200px;
     width: 100%; 
     margin: 20px; 
 }
@@ -120,7 +136,7 @@ html {
     margin: 20px; 
     text-align: center; 
 }
-
+/*
 #about .about .titulo-seccion{
     font-size: 22px;
     text-transform: uppercase;
@@ -128,7 +144,7 @@ html {
     text-decoration: underline;
     text-decoration-color: #d3d3d3;
     text-decoration-thickness: 5px;
-}
+}*/
 
 #about .about h2{
     font-size: 34px;
@@ -142,21 +158,16 @@ html {
     color:aqua;
 }
 
-#about .about h3{
-    font-size: 18px;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-    color:aqua
-}
 
 #about .about p{
-    font-size: 14px;
+    font-size: 20px;
     line-height: 25px;
     color: #ffffff;
     margin-bottom: 12px;
     text-align: left;
+    width: 70%;
+    margin: auto;
+
 }
 
 #about .about a{
