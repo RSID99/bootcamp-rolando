@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="tateti.css">
 </head>
 <body> 
-     
+    <h1 id="titulo">Juego Ta-te-ti</h1>
     <div id="inicio">
         <input type="text" id="jug1" placeholder="Jugador 1 " required>
         <input type="text" id="jug2" placeholder="Jugador 2 " required> 
@@ -18,7 +18,7 @@
             <input type="radio" id="o" name="symbol" value="O" onclick="simbolo('O')">
             <label for="o">O</label>
         </div>
-        <button onclick="iniciarJuego()">Iniciar</button>
+        <button id="inicia" onclick="iniciarJuego()">Iniciar</button>
     </div>
     <div id="tablero" style="display: none;">
         <table>
@@ -80,6 +80,7 @@
             
                 document.getElementById('inicio').style.display = 'none';
                 document.getElementById('tablero').style.display = 'block';
+                document.getElementById('titulo').style.display = 'none';
             }
             
             function marcar(index) {
@@ -125,6 +126,7 @@
                 juegoActivo = false;
                 document.getElementById('tablero').style.display = 'none';
                 document.getElementById('inicio').style.display = 'block';
+                document.getElementById('titulo').style.display = 'block';
             }
 
 
