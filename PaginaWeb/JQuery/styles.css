@@ -1,15 +1,19 @@
 body {
-    background:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("fondo.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("fondo.jpg");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat:repeat;
+    height:90vh; 
     font-family: Arial, sans-serif;
     text-align: center;
+    color: white;
 }
-
 button{
     margin: 20px;
     padding: 10px 20px;
     border-radius: 8px;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: aquamarine;
+    color: #ffffff;
     cursor: pointer;
     transition: background-color 0.3s ease;
     border-style: double;
@@ -38,11 +42,12 @@ ul.character-list li {
     display: flex; 
     align-items: center; 
     justify-content: flex-start; 
-    background-color: #f4f4f4;
+    background-color: #131313;
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     width: 400px; 
+    
 }
 ul.character-list li img {
     width: 200px; 
@@ -50,9 +55,10 @@ ul.character-list li img {
     border-radius: 8px; 
     margin-right: 30px;
 }
-ul.character-list li p {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0; 
-    color: #ffffff;
+
+
+ul.character-list li div {
+color: aquamarine;
+text-align: left;
 }
+

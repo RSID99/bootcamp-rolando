@@ -93,7 +93,6 @@ html {
     color: aliceblue;
 }
 
-
 #inicio .contenido .carousel {
     max-width: 300px; 
     margin: 20px auto;
@@ -306,6 +305,7 @@ justify-content: space-between;
 
 #contacto .contenedor-form .input-full{
     width: 100%;
+    padding: 10px;
 }
 
 #contacto .btn-enviar{
